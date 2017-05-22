@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ public class Validator
 {
     
 
-        private string _emailadress;
+      
 
    public bool ValidateEmailAddress(string emailadress)
     {
@@ -19,36 +20,52 @@ public class Validator
             return false;
 
        
-        int pos1 = emailadress.IndexOf('@');
-        if (!(pos1 > 0))
-            return false;
-        string del1 = emailadress.Substring(0,pos1);
-        string dl2 = emailadress.Substring(pos1+1);
-            int pos2 = dl2.IndexOf('.');
-        if (!(pos2 > 0))
-            return false;
-        string del2 = emailadress.Substring(pos1+1, pos2);
-
-       string del3 = dl2.Substring(pos2+1);
-
-        if (!((Regex.IsMatch(del1, @"^[a-zA-Z]+$"
-        ))))
-            return false;
-        if (!((Regex.IsMatch(del2, @"^[a-zA-Z]+$"
-        ))))
+        int atSignIndex = emailadress.IndexOf('@');
+        if (!(atSignIndex > 0))
             return false;
 
-        if (!((Regex.IsMatch(del3, @"^[a-zA-Z]+$"
-        ))))
+        string emailAdressBeforeAtSign = emailadress.Substring(0,atSignIndex);
+        string emailAdressRestPart = emailadress.Substring(atSignIndex+1);
+            int atSignDot = emailAdressRestPart.IndexOf('.');
+        if (!(atSignDot > 0))
             return false;
+        string emailAdressAfterAtSignAndBeforeDotSign = emailadress.Substring(atSignIndex+1, atSignDot);
 
-            return true;
-        //A - Z)@(A - Z).(A - Z)
+       string emailAdressAfterDotSign = emailAdressRestPart.Substring(atSignDot+1);
+
+       return EmailAddressIsOk(emailAdressBeforeAtSign, emailAdressAfterAtSignAndBeforeDotSign, emailAdressAfterDotSign);
+        
+
+
+    }
+
+    bool EmailAddressIsOk(string adressBeforeAtSign, string adressBetweenAtSignAndDotSign, string adressAfterDotSign)
+    {
+        if (CheckStringContainOtherSignThanAtoZ(adressBeforeAtSign) && CheckStringContainOtherSignThanAtoZ(adressBetweenAtSignAndDotSign) && CheckStringContainOtherSignThanAtoZ(adressAfterDotSign))
+                return true;
+        else
+        {
+            return false;
+        }
+
 
 
     }
 
 
+    bool CheckStringContainOtherSignThanAtoZ(string expression)
+    {
 
-}
+        if (Regex.IsMatch(expression, @"^[a-zA-Z]+$"))
+        return true;
+        else
+        return false;
+
+
+     }
+
+
+
+
+    }
 }
