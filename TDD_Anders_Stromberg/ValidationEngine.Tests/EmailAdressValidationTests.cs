@@ -11,18 +11,18 @@ namespace ValidationEngine.Tests
 {
 
     [TestFixture]
-    public class ValidationTests
+    public class EmailAdressValidationTests
     {
+        private Validator sut = new ValidationEngine.Validator();
+        //System Under Test =sut
 
         [Test]
         public void TrueForInValidAddress()
         {
-            var sut = new ValidationEngine.Validator();
-      
-       
            
-            
-       
+      
+     
+           
           
           
             Assert.False(sut.ValidateEmailAddress("name@test2015.com"));
@@ -33,7 +33,7 @@ namespace ValidationEngine.Tests
         [Test]
         public void ReturnFalseforName2015TestComAdress()
         {
-            var sut = new ValidationEngine.Validator();
+          
             Assert.False(sut.ValidateEmailAddress("Name2015@test.com"));
 
         }
@@ -41,7 +41,7 @@ namespace ValidationEngine.Tests
         [Test]
         public void ReturnFalseforEmptyAdress()
         {
-            var sut = new ValidationEngine.Validator();
+          
             Assert.False(sut.ValidateEmailAddress(""));
 
         }
@@ -49,14 +49,13 @@ namespace ValidationEngine.Tests
         [Test]
         public void ReturnFalseforTestComAdress()
         {
-            var sut = new ValidationEngine.Validator();
+          
             Assert.False(sut.ValidateEmailAddress("test.com"));
 
         }
         [Test]
         public void ReturnFalsefornametestAdress()
         {
-            var sut = new ValidationEngine.Validator();
             Assert.False(sut.ValidateEmailAddress("name@test"));
 
         }
@@ -64,7 +63,7 @@ namespace ValidationEngine.Tests
         [Test]
         public void ReturnFalseforNullAdress()
         {
-            var sut = new ValidationEngine.Validator();
+            
             Assert.False(sut.ValidateEmailAddress(null));
 
         }
@@ -73,7 +72,7 @@ namespace ValidationEngine.Tests
         [Test]
     public void TrueForValidAddress()
         {
-            var sut = new ValidationEngine.Validator();
+           
         
            
                   
@@ -85,7 +84,7 @@ namespace ValidationEngine.Tests
         [Test]
         public void TrueForJoeAppleAddress()
         {
-            var sut = new ValidationEngine.Validator();
+           
 
 
             Assert.True(sut.ValidateEmailAddress("joe@apple.com"));
