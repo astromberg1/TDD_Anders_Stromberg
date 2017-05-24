@@ -32,8 +32,32 @@ public class Validator
 
 
         public bool ValidateEmailAddress(string emailadress)
-    {
-        if (string.IsNullOrEmpty(emailadress))
+        {
+            const string REGEXEXPRESSION = @"^([a-zA-Z]+)@([a-zA-Z]+)(\.([a-zA-Z])+)$";
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+
+            if (!(string.IsNullOrEmpty(emailadress)))
+            {
+                if (Regex.IsMatch(emailadress, REGEXEXPRESSION))
+
+                {
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+
+
+
+            if (string.IsNullOrEmpty(emailadress))
             return false;
 
        
