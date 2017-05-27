@@ -130,6 +130,24 @@ namespace TravelAgency.Tests
 
         }
 
+        [Test]
+        public void ShouldThrowTourAllocationException()
+        {
+            sut.CreateTour(
+                "New years day safari 1", new DateTime(2017, 1, 1, 10, 15, 0), 20);
+            sut.CreateTour(
+                "New years day safari 2", new DateTime(2017, 1, 1, 11, 15, 0), 30);
+            sut.CreateTour(
+                "New years day safari 3", new DateTime(2017, 1, 1, 12, 15, 0), 30);
+
+            Assert.That(() => sut.CreateTour(
+                    "New years day safari 4", new DateTime(2017, 1, 1, 13, 15, 0), 30)
+                , Throws.TypeOf<TourAllocationException>());
+
+
+
+        }
+
     }
 
-}
+    }
