@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
+using System.Diagnostics;
 
 namespace TravelAgency.Tests
 {
@@ -14,13 +15,39 @@ namespace TravelAgency.Tests
         private TourSchedule sut;
 
         [SetUp]
-       public void Setup()
+       public void BeforeEachTest()
         {
+            Console.WriteLine("Before {0}",TestContext.CurrentContext.Test.Name);
+            
+
             this.sut = new TourSchedule();
             sut.CreateTour(
                 "Test tour", new DateTime(2013, 1, 2, 10, 15, 0), 99);
 
         }
+
+        [TearDown]
+        public void AfterEachTest()
+        {
+            Console.WriteLine("After {0}", TestContext.CurrentContext.Test.Name);
+            sut = null;
+        }
+
+        #region Fixture
+
+        [TestFixtureSetUp]
+
+        public void BeforeAnyTestStarted()
+        {
+            Console.WriteLine("************Before Travel Agency Test");    
+
+        }
+
+
+            #endregion
+
+
+
 
         [Test]
        public void CanCreateNewTour()

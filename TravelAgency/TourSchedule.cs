@@ -28,40 +28,50 @@ namespace TravelAgency
 
     public class TourSchedule
     {
-        private Dictionary<DateTime,List<Tour>> Tours = new Dictionary<DateTime, List<Tour>>();
-       
-       public void CreateTour(string name, DateTime tourDate, int numberofseats)
-       {
-           Tour tour = new Tour(name, tourDate, numberofseats);
-           var list = new List<Tour>();
-           var lista = GetToursFor(tourDate.Date);
 
-           if (lista == null)
-           {
-               list.Add(tour);
-               Tours[tourDate.Date] = list;
-           }
-           else
-           {
+        private Dictionary<DateTime, List<Tour>> Tours = new Dictionary<DateTime, List<Tour>>();
 
+        public void CreateTour(string name, DateTime tourDate, int numberofseats)
+        {
+            try
+            {
 
-               if (lista.Count == 0)
-               {
-                   list.Add(tour);
-                   Tours.Add(tourDate.Date, list);
+                Tour tour = new Tour(name, tourDate, numberofseats);
+                var list = new List<Tour>();
+                var lista = GetToursFor(tourDate.Date);
 
-               }
-               else
-               {
-                    if (lista.Count>2)
-                        throw new TourAllocationException("Max three tours a day!");
-                    lista.Add(tour);
-                   Tours[tourDate.Date] = lista;
-               }
-           }
+                if (lista == null)
+                {
+                    list.Add(tour);
+                    Tours[tourDate.Date] = list;
+                }
+                else
+                {
 
 
-       }
+                    if (lista.Count == 0)
+                    {
+                        list.Add(tour);
+                        Tours.Add(tourDate.Date, list);
+
+                    }
+                    else
+                    {
+                        if (lista.Count > 2)
+                            throw new TourAllocationException("Max three tours a day!");
+                        lista.Add(tour);
+                        Tours[tourDate.Date] = lista;
+                    }
+                }
+
+
+            }
+            catch (TourAllocationException e)
+            {
+                throw new TourAllocationException("Max three tours a day!");
+
+            }
+        }
 
         public List<Tour> GetToursFor(DateTime tourDate)
         {
