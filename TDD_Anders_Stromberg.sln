@@ -10,9 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationEngine.Tests", "TDD_Anders_Stromberg\ValidationEngine.Tests\ValidationEngine.Tests.csproj", "{1B66635A-3ED1-4300-82AF-8DCDBB728283}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise2", "Exercise2", "{73514D6B-441C-4DFA-B9EA-8F6824579AC9}"
-	ProjectSection(SolutionItems) = preProject
-		TDD_Anders_Stromberg\ValidationEngine.Tests\EmailAdressValidationTests.cs = TDD_Anders_Stromberg\ValidationEngine.Tests\EmailAdressValidationTests.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency", "TravelAgency\TravelAgency.csproj", "{AD81491B-872D-4EED-9619-E2B49338DB86}"
 EndProject
@@ -23,6 +20,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator", "StringCalculator\StringCalculator.csproj", "{EF60D090-3133-483C-A2B6-FDC7DB13DBF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator.Tests", "StringCalculator.Test\StringCalculator.Tests.csproj", "{C726F080-3E55-4759-BD5E-665E76FA2137}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise7", "Exercise7", "{339B4E8C-7B4E-4A55-976A-EAF61C8F5AB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncDelegates", "FuncDelegates\FuncDelegates.csproj", "{893A92F9-5943-4C33-BEC1-D88CD388B21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates1", "Delegates1\Delegates1.csproj", "{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise4", "Exercise4", "{7974B23C-6240-49DA-99D2-1B246BE125BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtraExercise3", "ExtraExercise3", "{1B992362-493E-42FE-96C3-D0FB4F45D289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +61,14 @@ Global
 		{C726F080-3E55-4759-BD5E-665E76FA2137}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C726F080-3E55-4759-BD5E-665E76FA2137}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C726F080-3E55-4759-BD5E-665E76FA2137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893A92F9-5943-4C33-BEC1-D88CD388B21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893A92F9-5943-4C33-BEC1-D88CD388B21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893A92F9-5943-4C33-BEC1-D88CD388B21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893A92F9-5943-4C33-BEC1-D88CD388B21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +80,7 @@ Global
 		{AA43941E-41ED-4917-919A-DEB7B1919D74} = {73514D6B-441C-4DFA-B9EA-8F6824579AC9}
 		{EF60D090-3133-483C-A2B6-FDC7DB13DBF8} = {31AE5D50-A271-435A-9637-CD0C0B491974}
 		{C726F080-3E55-4759-BD5E-665E76FA2137} = {31AE5D50-A271-435A-9637-CD0C0B491974}
+		{893A92F9-5943-4C33-BEC1-D88CD388B21F} = {339B4E8C-7B4E-4A55-976A-EAF61C8F5AB3}
+		{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3} = {339B4E8C-7B4E-4A55-976A-EAF61C8F5AB3}
 	EndGlobalSection
 EndGlobal

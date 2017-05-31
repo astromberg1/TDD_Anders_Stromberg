@@ -20,6 +20,13 @@ namespace StringCalculator.Test
         
         }
 
+        [TearDown]
+        public void Teardown()
+        {
+            sut = null;
+
+        }
+
 
         [Test]
 

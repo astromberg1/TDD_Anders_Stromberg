@@ -9,6 +9,9 @@ using System.Diagnostics;
 
 namespace TravelAgency.Tests
 {
+    
+
+
     [TestFixture]
     public class TourScheduleTests
     {
