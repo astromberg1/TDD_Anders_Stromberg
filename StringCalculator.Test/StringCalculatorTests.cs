@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,8 +49,21 @@ namespace StringCalculator.Test
 
         }
 
-        [TestCase("1",1)]
-        [TestCase("2", 2)]
+        public class TestValueSource : IEnumerable
+        {
+            public IEnumerator GetEnumerator()
+            {
+                yield return new object[] {"1", 1};
+                yield return new object[] { "2", 2 };
+                yield return new object[] { "2,3,4,1",10};
+                yield return new object[] { "222,111", 333 };
+            }
+
+        }
+
+        //[TestCase("1",1)]
+        //[TestCase("2", 2)]
+        [TestCaseSource(typeof(TestValueSource))]
         public void StringCalculatorShouldReturnValueIfOneValueString(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
