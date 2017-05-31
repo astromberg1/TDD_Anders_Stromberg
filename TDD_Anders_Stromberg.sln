@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncDelegates", "FuncDelega
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates1", "Delegates1\Delegates1.csproj", "{34A7EED6-B4A5-49FF-9BB8-5C4E7CC419D3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise4", "Exercise4", "{7974B23C-6240-49DA-99D2-1B246BE125BE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtraExercise3", "ExtraExercise3", "{1B992362-493E-42FE-96C3-D0FB4F45D289}"
 EndProject
 Global

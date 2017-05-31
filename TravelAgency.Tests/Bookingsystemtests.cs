@@ -16,13 +16,10 @@ namespace TravelAgency.Tests
         private TourScheduleStub torschedulestub;
 
         [SetUp]
-
         public void Setup()
         {
             torschedulestub= new TourScheduleStub();
             sut = new BookingSystem(torschedulestub);
-
-
 
         }
 
@@ -44,11 +41,7 @@ namespace TravelAgency.Tests
         [Test]
         public void ShouldThrowExceptionIfTourNotExists()
         {
-
             torschedulestub.Tours = new List<Tour>();
-
-            //torschedulestub.Tours.Add(new Tour("kalle resor", new DateTime(2017, 01, 01), 30));
-
             var passenger = new Passenger() { FirstName = "per", LastName = "Larsson" };
             Assert.Throws<NonExistentTourException>(() =>
             sut.CreateBooking("kalle resor", new DateTime(2017, 01, 01), passenger));
@@ -60,7 +53,6 @@ namespace TravelAgency.Tests
         [Test]
         public void ShouldThrowExceptionIfTourNoSeatsAvailable()
         {
-
             torschedulestub.Tours = new List<Tour>();
 
             torschedulestub.Tours.Add(new Tour("kalle resor", new DateTime(2017, 01, 01), 1));

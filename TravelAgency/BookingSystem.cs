@@ -19,27 +19,15 @@ namespace TravelAgency
 
 
       public void CreateBooking(string tourname, DateTime tourdate, Passenger passenger)
-      {
-          
-          
-             
+      {      
           var result = TourSchedule.GetToursFor(tourdate.Date).FirstOrDefault(x => x.Name == tourname);
             if (result==null)
                 throw new NonExistentTourException();
 
-
-
-
-         
             if (result.NumberOfSeats == bookings.Count(x=>x.Tour==result))
                 throw new NoAvailableSeatsException();
             bookings.Add(new Booking() { Passenger = passenger, Tour = result });
-            
          
-
-       
-         
-
       }
 
       public List<Booking> GetBookingsFor(Passenger passenger)
