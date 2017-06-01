@@ -24,6 +24,7 @@ namespace TravelAgency.Tests
         }
 
         [Test]
+        [Category("Exercise4")]
         public void CanCreateBooking()
         {
             
@@ -39,6 +40,7 @@ namespace TravelAgency.Tests
         }
         //20.	Write and get another test to pass which asserts that when trying to book someone on a non-existent tour, an exception gets thrown.
         [Test]
+        [Category("Exercise4")]
         public void ShouldThrowExceptionIfTourNotExists()
         {
             torschedulestub.Tours = new List<Tour>();
@@ -51,6 +53,7 @@ namespace TravelAgency.Tests
 
         //21.	Finally, repeat with a third test that makes sure that when you try to book more passengers than there are seats available, an exception is thrown.
         [Test]
+        [Category("Exercise4")]
         public void ShouldThrowExceptionIfTourNoSeatsAvailable()
         {
             torschedulestub.Tours = new List<Tour>();

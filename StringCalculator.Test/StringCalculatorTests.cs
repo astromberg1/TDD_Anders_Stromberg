@@ -30,7 +30,7 @@ namespace StringCalculator.Test
 
 
         [Test]
-
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnZeroIfNullString()
         {
             int result = sut.Add(null);
@@ -41,6 +41,7 @@ namespace StringCalculator.Test
 
         }
         [Test]
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnZeroIfEmptyString()
         {
             int result = sut.Add(string.Empty);
@@ -64,6 +65,7 @@ namespace StringCalculator.Test
         //[TestCase("1",1)]
         //[TestCase("2", 2)]
         [TestCaseSource(typeof(TestValueSource))]
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnValueIfOneValueString(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -73,6 +75,8 @@ namespace StringCalculator.Test
 
         [TestCase("111", 111)]
         [TestCase("222", 222)]
+
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnValueWithManyDigitsInOneValueString(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -84,6 +88,7 @@ namespace StringCalculator.Test
 
         [TestCase("1,2", 3)]
         [TestCase("2,5", 7)]
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnSumWithCommaDelimiterString(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -92,7 +97,7 @@ namespace StringCalculator.Test
         }
         [TestCase("1,2,", 3)]
         [TestCase("2,5,", 7)]
-        
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnSumWithCommaDelimiterAndExtraCommaString(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -100,6 +105,7 @@ namespace StringCalculator.Test
             Assert.That(res, Is.EqualTo(result));
         }
         [TestCase("2,5,3,3,3,3,3,3,3,3,120,999,99", 1249)]
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnSumWithMultipleValues(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -109,6 +115,7 @@ namespace StringCalculator.Test
 
         [TestCase("1\n2,3x§", 6)]
         [TestCase("1,\n", 1)]
+        [Category("Exercise3")]
         public void StringCalculatorShouldReturnSumWithAnotherCharDelimersString(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -117,6 +124,7 @@ namespace StringCalculator.Test
         }
 
         [TestCase("2,1001", 2)]
+        [Category("Exercise3")]
         public void StringCalculatorShouldIgnoreValuesBiggerThan1000(string valuestring, int result)
         {
             int res = sut.Add(valuestring);
@@ -127,6 +135,7 @@ namespace StringCalculator.Test
         // 5.	Calling Add with a negative number will throw an exception “negatives not allowed” 
         //- and the negative that was passed. if there are multiple negatives, show all of them in the exception message
         [Test]
+        [Category("Exercise3")]
         public void StringCalculatorAddShouldThrowExceptionIfValuesAreNegative()
         {
 
@@ -137,6 +146,7 @@ namespace StringCalculator.Test
         }
 
         [Test]
+        [Category("Exercise3")]
         public void StringCalculatorAddShouldThrowExceptionWithMessageIfValuesAreNegative()
         {
             var ex = Assert.Throws<StringCalculatorException>(() =>
@@ -145,6 +155,7 @@ namespace StringCalculator.Test
         }
 
         [Test]
+        [Category("Exercise3")]
         public void StringCalculatorAddShouldThrowExceptionWithMessageIfManyValuesAreNegative()
         {
             var ex = Assert.Throws<StringCalculatorException>(() =>

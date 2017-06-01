@@ -53,7 +53,8 @@ namespace TravelAgency.Tests
 
 
         [Test]
-       public void CanCreateNewTour()
+        [Category("Exercise2")]
+        public void CanCreateNewTour()
         {
 
             var tourdate = new DateTime(2013, 1, 1);
@@ -78,6 +79,7 @@ namespace TravelAgency.Tests
             
         }
         [Test]
+        [Category("Exercise2")]
         public void ToursAreScheduledByDateOnly()
         {
             DateTime tourdate = new DateTime(2013, 1, 1, 10, 15, 0);
@@ -103,6 +105,7 @@ namespace TravelAgency.Tests
 
         }
         [Test]
+        [Category("Exercise3")]
         public void GetToursForGivenDayOnly()
         {
             sut.CreateTour(
@@ -138,6 +141,7 @@ namespace TravelAgency.Tests
 
         }
         [Test]
+        [Category("Exercise2")]
         public void ThrowTourAllocationExceptionTest()
         {
             sut.CreateTour(
@@ -161,6 +165,7 @@ namespace TravelAgency.Tests
         }
 
         [Test]
+        [Category("Exercise2")]
         public void ShouldThrowTourAllocationException()
         {
             sut.CreateTour(

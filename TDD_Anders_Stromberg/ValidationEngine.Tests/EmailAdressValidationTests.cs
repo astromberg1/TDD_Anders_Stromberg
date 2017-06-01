@@ -11,12 +11,15 @@ namespace ValidationEngine.Tests
 {
 
     [TestFixture]
+    [Category("Exercise1")]
     public class EmailAdressValidationTests
     {
         private Validator sut = new ValidationEngine.Validator();
         //System Under Test =sut
 
         [Test]
+      [Repeat(20)]
+        [Category("Exercise1")]
         public void TrueForInValidAddress()
         {
            
@@ -31,6 +34,8 @@ namespace ValidationEngine.Tests
         }
 
         [Test]
+        [Category("Exercise1")]
+        [Ignore("behövs ej")]
         public void ReturnFalseforName2015TestComAdress()
         {
           
@@ -39,6 +44,7 @@ namespace ValidationEngine.Tests
         }
 
         [Test]
+        [MaxTime(40)]
         public void ReturnFalseforEmptyAdress()
         {
           
@@ -47,6 +53,7 @@ namespace ValidationEngine.Tests
         }
 
         [Test]
+        [Category("Exercise1")]
         public void ReturnFalseforTestComAdress()
         {
           
@@ -54,6 +61,7 @@ namespace ValidationEngine.Tests
 
         }
         [Test]
+        [Category("Exercise1")]
         public void ReturnFalsefornametestAdress()
         {
             Assert.False(sut.ValidateEmailAddress("name@test"));
@@ -61,6 +69,7 @@ namespace ValidationEngine.Tests
         }
 
         [Test]
+        [Category("Exercise1")]
         public void ReturnFalseforNullAdress()
         {
             
@@ -70,7 +79,8 @@ namespace ValidationEngine.Tests
 
 
         [Test]
-    public void TrueForValidAddress()
+        [Category("Exercise1")]
+        public void TrueForValidAddress()
         {
            
         
@@ -82,6 +92,7 @@ namespace ValidationEngine.Tests
         }
 
         [Test]
+        [Category("Exercise1")]
         public void TrueForJoeAppleAddress()
         {
            
